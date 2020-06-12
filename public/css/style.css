@@ -1,0 +1,67 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.col-md-4 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px;
+}
+.card {
+    padding: 30px;
+
+}
+
+.col-md-8 {
+    border: 2px solid black;
+}
+.container {
+    text-align: center;
+}
+.jumbotron {
+    color: black;
+    background-image: url('../images/newspaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+}
+#headerTitle {
+    color: #ffffff;
+    font-size: 60px;
+}
+#subTitle {
+    color: #ce2c29;
+    font-weight: bolder;
+    font-style: italic;
+}
+#line-break {
+    border: 1px solid #ce2c29 ;
+    width: 30%;
+}
+#category {
+    background: #3694e5;
+    color: #ffffff;
+}
+.navbar {
+    background: #3694e5;
+}
+.nav-link,
+.navbar-brand {
+    color: #ffffff;
+}
+#mongoTitle {
+    color: #ce2c29;
+    font-weight: bolder;
+    font-style: italic;
+}
+.card-header {
+    background: #3694e5;
+    color: #ffffff;
+    font-size: 25px;
+    font-style: italic;
+}
+.card-text {
+    font-size: 20px;
+}

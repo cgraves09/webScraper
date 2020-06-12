@@ -1,0 +1,34 @@
+var express = require('express');
+var exphbs = require('express-handlebars');
+var logger= require('morgan');
+var mongoose = require('mongoose');
+
+var PORT = 3000;
+var app = express();
+
+app.use(logger('dev'));
+
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+app.use(express.static('public'));
+
+mongoose.connect('mongodb://localhost/webScrapper', { useNewUrlParser: true});
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+
+app.set('view engine', 'handlebars');
+
+app.get('/', function(req,res){
+    res.render('index');
+});
+
+// Routes
+require('./controllers/apiRoutes')(app);
+require('./controllers/htmlRoutes')(app);
+
+app.listen(PORT, function(){
+    console.log('Listening on PORT: ' + PORT);
+});
+
+module.exports = app;
+
