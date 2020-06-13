@@ -75,7 +75,6 @@ $(document).ready(() => {
     }
     const checker = () => {
        let title = $('.mb-3').html();
-       console.log(title)
         if(!title){
             $('#noArticles').show(); 
         } 
