@@ -1,6 +1,9 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+a {
+    padding: 20px;
+}
 .col-md-4 {
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +13,6 @@ body {
     padding: 30px;
 
 }
-
 .col-md-8 {
     border: 2px solid black;
 }
@@ -40,7 +42,7 @@ body {
     border: 1px solid #ce2c29 ;
     width: 30%;
 }
-#category {
+.category {
     background: #3694e5;
     color: #ffffff;
 }
@@ -64,4 +66,12 @@ body {
 }
 .card-text {
     font-size: 20px;
+}
+.noArticleBody {
+    background: #edbf6f;
+    color: #ffffff;
+    font-size: 20px;
+}
+.mb-3 {
+   border: 0px #fff solid;
 }

@@ -21,11 +21,15 @@ module.exports = function(app) {
             });             
         }).then(data => {res.sendStatus(200)}).catch(err => {if(err) throw err});
     });
+
     app.get('/articles', (req, res) => {
         db.Article.find({}).then(dbArticle => {res.json(dbArticle)}).catch(err => res.json(err));
     });
+
     app.get('/saved', (req, res) => {db.Saved.find({}).then(dbArticle => res.send(dbArticle)).catch(err => res.json(err))})
+   
     app.post('/saved', (req, res, next) => {db.Saved.create(req.body).then(dbArticle => res.json(dbArticle))});
+    
     app.delete('/delete/:id', (req, res) =>{ db.Saved.deleteOne({_id: req.params.id}, err => {
         if (err) throw err;
         console.log(req.params.id);
@@ -33,7 +37,8 @@ module.exports = function(app) {
         res.sendStatus(200);
         });
     });
-        app.delete('/deleteArticle/:id', (req, res) =>{ db.Article.deleteOne({_id: req.params.id}, err => {
+    
+    app.delete('/deleteArticle/:id', (req, res) =>{ db.Article.deleteOne({_id: req.params.id}, err => {
         if (err) throw err;
         console.log(req.params.id);
         console.log('Successfully Deleted Article');

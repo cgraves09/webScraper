@@ -32,8 +32,7 @@ $(document).ready(() => {
                     checker();
                 }).catch(err => {
                     console.log(err);
-                });  
-                 
+                });    
             }); 
         });        
     };
@@ -57,21 +56,19 @@ $(document).ready(() => {
             let divRow = $('<div class="row no-gutters">');
             let divColFour = $('<div class="col-md-4">')
             let divCol = $(`<div data-id="${item._id}" class="col-md-8">`);
-            let title = $(`<h1 class="title"></h1>`);
-            let category = $('<h3 class="category"></3>')
+            let title = $(`<h2 class="title">${item.title}</h2>`);
+            let category = $(`<h3 class="category">${item.category}</3>`)
             let link = $(`<a href="${item.link}"><button class="btn btn-primary" class="link">View Article</button></a>`);
             let image = item.image;
-            divColFour.css('background-image', image);
-            
-            let saveBtn = $(`<button class="btn btn-danger saveArticle" data-id="${item._id}" data-title="${item.title}" data-category="${item.category}" 
+            let saveBtn = $(`<button class="btn btn-danger saveArticle" data-id="${item._id}"
+            data-title="${item.title}" data-category="${item.category}" 
             data-link="${item.link}" data-image="${item.image}">Save Article</button>`);
-            title.append(item.title);
-            category.append(item.category);
+            divColFour.css('background-image', image);
             divCol.append(category,title,link,saveBtn);
             divRow.append(divColFour,divCol);
             card.append(divRow);
-            $('#results').append(card);
-        });       
+            $('#results').prepend(card);
+        });     
     }
     const checker = () => {
        let title = $('.mb-3').html();

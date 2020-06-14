@@ -22,7 +22,6 @@ app.get('/', function(req,res){
     res.render('index');
 });
 
-// Routes
 require('./controllers/apiRoutes')(app);
 require('./controllers/htmlRoutes')(app);
 
