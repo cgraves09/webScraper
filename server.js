@@ -1,10 +1,10 @@
-var express = require('express');
-var exphbs = require('express-handlebars');
-var logger= require('morgan');
-var mongoose = require('mongoose');
-var MONGODB_URI = process.env.MONGODB_URI ||'mongodb://localhost/webScrapper'; 
-var PORT = process.env.PORT || 3000;
-var app = express();
+const express = require('express');
+const exphbs = require('express-handlebars');
+const logger= require('morgan');
+const mongoose = require('mongoose');
+const MONGODB_URI = process.env.MONGODB_URI ||'mongodb://localhost/webScrapper'; 
+const PORT = process.env.PORT || 3000;
+const app = express();
 
 app.use(logger('dev'));
 
